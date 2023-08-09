@@ -7,12 +7,10 @@ const Hero = require('../models/heroes')
 const controllerHero = {
     create: async (req, res) => {
         try {
-            const id = req.body.id
             const name_hero = req.body.name_hero
 
             //Wait to receive the created task with the promise
             await Hero.create({
-                id: id,
                 name_hero: name_hero
             });
             console.log('Hero Created')
